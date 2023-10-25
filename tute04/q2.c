@@ -1,0 +1,40 @@
+// This program prints out a danish flag, by
+// looping through the rows and columns of the flag.
+// Each element inside the flag is a single character.
+// (i.e., 1 byte).
+//
+// (Dette program udskriver et dansk flag, ved at
+// sløjfe gennem rækker og kolonner i flaget.)
+//
+
+#include <stdio.h>
+
+#define FLAG_ROWS 6
+#define FLAG_COLS 12
+
+char flag[FLAG_ROWS][FLAG_COLS] = {
+    {'#', '#', '#', '#', '#', '.', '.', '#', '#', '#', '#', '#'},
+    {'#', '#', '#', '#', '#', '.', '.', '#', '#', '#', '#', '#'},
+    {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
+    {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
+    {'#', '#', '#', '#', '#', '.', '.', '#', '#', '#', '#', '#'},
+    {'#', '#', '#', '#', '#', '.', '.', '#', '#', '#', '#', '#'}
+};
+
+int main(void) {
+    int row = 0;
+loop1:
+    //for (int row = 0; row < FLAG_ROWS; row++) {
+    if (row >= FLAG_ROWS) goto exit;
+    int col = 0;
+loop2:
+    if (col >= FLAG_COLS) goto end_loop2;
+    //for (int col = 0; col < FLAG_COLS; col++) {
+    printf("%c", flag[row][col]);
+    col++;
+end_loop2:
+    printf("\n");
+    row++;
+exit:
+    return 0;
+}
