@@ -1,0 +1,1 @@
+// given a uint32_t, extracts and returns the middle six bits.
